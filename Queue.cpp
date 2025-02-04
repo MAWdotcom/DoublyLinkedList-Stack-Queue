@@ -12,6 +12,10 @@ void enqueue(int x){
         front=rear=0;
         queu[rear]=x;
     }
+    else{
+        rear=(rear+1)%5;
+        queu[rear]=x;
+    }
 }
 
 void dequeue(){
@@ -52,15 +56,17 @@ int main(){
     {
         cout<<"1->Enqueue\n";
         cout<<"2->Dequeue\n";
-        cout<<"1->Display\n";
-        cout<<"1->Exit\n";
+        cout<<"3->Display\n";
+        cout<<"4->Exit\n";
 
         int a;
         cin>>a;
         switch (a)
         {
         case 1:
-            enqueue(a);
+            int n;
+            cin>>n;
+            enqueue(n);
             break;
         case 2:
             dequeue();
